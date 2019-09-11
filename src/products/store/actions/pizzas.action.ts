@@ -51,17 +51,17 @@ export class UpdatePizza implements Action {
   constructor(public payload: Pizza) {}
 }
 
-export class UpdatePizzaSuccess implements Action {
-  readonly type = UPDATE_PIZZA_SUCCESS;
-  constructor(public payload: Pizza) {}
-}
-
 export class UpdatePizzaFail implements Action {
   readonly type = UPDATE_PIZZA_FAIL;
   constructor(public payload: any) {}
 }
 
-// Remove pizza
+export class UpdatePizzaSuccess implements Action {
+  readonly type = UPDATE_PIZZA_SUCCESS;
+  constructor(public payload: Pizza) {}
+}
+
+// remove pizza
 export const REMOVE_PIZZA = '[Products] Remove Pizza';
 export const REMOVE_PIZZA_FAIL = '[Products] Remove Pizza Fail';
 export const REMOVE_PIZZA_SUCCESS = '[Products] Remove Pizza Success';

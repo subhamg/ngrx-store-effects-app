@@ -3,8 +3,8 @@ import { CanActivate } from '@angular/router';
 
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
+import { of } from 'rxjs/observable/of';
 import { tap, filter, take, switchMap, catchError } from 'rxjs/operators';
-import { of } from 'rxjs/Observable/of';
 
 import * as fromStore from '../store';
 
@@ -20,13 +20,13 @@ export class ToppingsGuard implements CanActivate {
   }
 
   checkStore(): Observable<boolean> {
-    return this.store.select(fromStore.getToppingLoaded).pipe(
-      tap((loaded) => {
+    return this.store.select(fromStore.getToppingsLoaded).pipe(
+      tap(loaded => {
         if (!loaded) {
           this.store.dispatch(new fromStore.LoadToppings());
         }
       }),
-      filter((loaded) => loaded),
+      filter(loaded => loaded),
       take(1)
     );
   }

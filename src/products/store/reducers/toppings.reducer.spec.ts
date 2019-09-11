@@ -30,12 +30,12 @@ describe('ToppingsReducer', () => {
       const toppings: Topping[] = [
         { id: 1, name: 'bacon' },
         { id: 2, name: 'pepperoni' },
-        { id: 3, name: 'tomato' }
+        { id: 3, name: 'tomato' },
       ];
       const entities = {
         1: toppings[0],
         2: toppings[1],
-        3: toppings[2]
+        3: toppings[2],
       };
       const { initialState } = fromToppings;
       const action = new fromActions.LoadToppingsSuccess(toppings);
@@ -80,7 +80,7 @@ describe('PizzasReducer Selectors', () => {
     it('should return .entities', () => {
       const entities: { [key: number]: Topping } = {
         1: { id: 1, name: 'bacon' },
-        2: { id: 2, name: 'pepperoni' }
+        2: { id: 2, name: 'pepperoni' },
       };
       const { initialState } = fromToppings;
       const previousState = { ...initialState, entities };

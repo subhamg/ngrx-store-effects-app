@@ -14,13 +14,13 @@ describe('ToppingsReducer Selectors', () => {
   const toppings: Topping[] = [
     { id: 1, name: 'bacon' },
     { id: 2, name: 'pepperoni' },
-    { id: 3, name: 'tomato' }
+    { id: 3, name: 'tomato' },
   ];
 
   const entities = {
     1: toppings[0],
     2: toppings[1],
-    3: toppings[2]
+    3: toppings[2],
   };
 
   beforeEach(() => {
@@ -28,9 +28,9 @@ describe('ToppingsReducer Selectors', () => {
       imports: [
         StoreModule.forRoot({
           ...fromRoot.reducers,
-          products: combineReducers(fromReducers.reducers)
-        })
-      ]
+          products: combineReducers(fromReducers.reducers),
+        }),
+      ],
     });
 
     store = TestBed.get(Store);
@@ -44,7 +44,7 @@ describe('ToppingsReducer Selectors', () => {
 
       store
         .select(fromSelectors.getToppingEntities)
-        .subscribe((value) => (result = value));
+        .subscribe(value => (result = value));
 
       expect(result).toEqual({});
 
@@ -60,7 +60,7 @@ describe('ToppingsReducer Selectors', () => {
 
       store
         .select(fromSelectors.getSelectedToppings)
-        .subscribe((value) => (result = value));
+        .subscribe(value => (result = value));
 
       store.dispatch(new fromActions.LoadToppingsSuccess(toppings));
 
@@ -78,7 +78,7 @@ describe('ToppingsReducer Selectors', () => {
 
       store
         .select(fromSelectors.getAllToppings)
-        .subscribe((value) => (result = value));
+        .subscribe(value => (result = value));
 
       expect(result).toEqual([]);
 
@@ -93,8 +93,8 @@ describe('ToppingsReducer Selectors', () => {
       let result;
 
       store
-        .select(fromSelectors.getToppingLoaded)
-        .subscribe((value) => (result = value));
+        .select(fromSelectors.getToppingsLoaded)
+        .subscribe(value => (result = value));
 
       expect(result).toEqual(false);
 
@@ -109,8 +109,8 @@ describe('ToppingsReducer Selectors', () => {
       let result;
 
       store
-        .select(fromSelectors.getToppingLoading)
-        .subscribe((value) => (result = value));
+        .select(fromSelectors.getToppingsLoading)
+        .subscribe(value => (result = value));
 
       expect(result).toEqual(false);
 

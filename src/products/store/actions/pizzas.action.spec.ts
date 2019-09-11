@@ -7,7 +7,7 @@ describe('Pizzas Actions', () => {
         const action = new fromPizzas.LoadPizzas();
 
         expect({ ...action }).toEqual({
-          type: fromPizzas.LOAD_PIZZAS
+          type: fromPizzas.LOAD_PIZZAS,
         });
       });
     });
@@ -19,7 +19,7 @@ describe('Pizzas Actions', () => {
 
         expect({ ...action }).toEqual({
           type: fromPizzas.LOAD_PIZZAS_FAIL,
-          payload
+          payload,
         });
       });
     });
@@ -33,8 +33,8 @@ describe('Pizzas Actions', () => {
             toppings: [
               { id: 1, name: 'onion' },
               { id: 2, name: 'mushroom' },
-              { id: 3, name: 'basil' }
-            ]
+              { id: 3, name: 'basil' },
+            ],
           },
           {
             id: 2,
@@ -42,15 +42,15 @@ describe('Pizzas Actions', () => {
             toppings: [
               { id: 1, name: 'onion' },
               { id: 2, name: 'mushroom' },
-              { id: 3, name: 'basil' }
-            ]
-          }
+              { id: 3, name: 'basil' },
+            ],
+          },
         ];
         const action = new fromPizzas.LoadPizzasSuccess(payload);
 
         expect({ ...action }).toEqual({
           type: fromPizzas.LOAD_PIZZAS_SUCCESS,
-          payload
+          payload,
         });
       });
     });
@@ -64,14 +64,14 @@ describe('Pizzas Actions', () => {
           toppings: [
             { id: 1, name: 'onion' },
             { id: 2, name: 'mushroom' },
-            { id: 3, name: 'basil' }
-          ]
+            { id: 3, name: 'basil' },
+          ],
         };
         const action = new fromPizzas.CreatePizza(payload);
 
         expect({ ...action }).toEqual({
           type: fromPizzas.CREATE_PIZZA,
-          payload
+          payload,
         });
       });
     });
@@ -83,7 +83,7 @@ describe('Pizzas Actions', () => {
 
         expect({ ...action }).toEqual({
           type: fromPizzas.CREATE_PIZZA_FAIL,
-          payload
+          payload,
         });
       });
     });
@@ -96,14 +96,14 @@ describe('Pizzas Actions', () => {
           toppings: [
             { id: 1, name: 'onion' },
             { id: 2, name: 'mushroom' },
-            { id: 3, name: 'basil' }
-          ]
+            { id: 3, name: 'basil' },
+          ],
         };
         const action = new fromPizzas.CreatePizzaSuccess(payload);
 
         expect({ ...action }).toEqual({
           type: fromPizzas.CREATE_PIZZA_SUCCESS,
-          payload
+          payload,
         });
       });
     });
@@ -118,14 +118,14 @@ describe('Pizzas Actions', () => {
           toppings: [
             { id: 1, name: 'onion' },
             { id: 2, name: 'mushroom' },
-            { id: 3, name: 'basil' }
-          ]
+            { id: 3, name: 'basil' },
+          ],
         };
         const action = new fromPizzas.UpdatePizza(payload);
 
         expect({ ...action }).toEqual({
           type: fromPizzas.UPDATE_PIZZA,
-          payload
+          payload,
         });
       });
     });
@@ -137,7 +137,7 @@ describe('Pizzas Actions', () => {
 
         expect({ ...action }).toEqual({
           type: fromPizzas.UPDATE_PIZZA_FAIL,
-          payload
+          payload,
         });
       });
     });
@@ -150,14 +150,14 @@ describe('Pizzas Actions', () => {
           toppings: [
             { id: 1, name: 'onion' },
             { id: 2, name: 'mushroom' },
-            { id: 3, name: 'basil' }
-          ]
+            { id: 3, name: 'basil' },
+          ],
         };
         const action = new fromPizzas.UpdatePizzaSuccess(payload);
 
         expect({ ...action }).toEqual({
           type: fromPizzas.UPDATE_PIZZA_SUCCESS,
-          payload
+          payload,
         });
       });
     });
@@ -172,14 +172,14 @@ describe('Pizzas Actions', () => {
           toppings: [
             { id: 1, name: 'onion' },
             { id: 2, name: 'mushroom' },
-            { id: 3, name: 'basil' }
-          ]
+            { id: 3, name: 'basil' },
+          ],
         };
         const action = new fromPizzas.RemovePizza(payload);
 
         expect({ ...action }).toEqual({
           type: fromPizzas.REMOVE_PIZZA,
-          payload
+          payload,
         });
       });
     });
@@ -191,7 +191,7 @@ describe('Pizzas Actions', () => {
 
         expect({ ...action }).toEqual({
           type: fromPizzas.REMOVE_PIZZA_FAIL,
-          payload
+          payload,
         });
       });
     });
@@ -204,14 +204,14 @@ describe('Pizzas Actions', () => {
           toppings: [
             { id: 1, name: 'onion' },
             { id: 2, name: 'mushroom' },
-            { id: 3, name: 'basil' }
-          ]
+            { id: 3, name: 'basil' },
+          ],
         };
         const action = new fromPizzas.RemovePizzaSuccess(payload);
 
         expect({ ...action }).toEqual({
           type: fromPizzas.REMOVE_PIZZA_SUCCESS,
-          payload
+          payload,
         });
       });
     });

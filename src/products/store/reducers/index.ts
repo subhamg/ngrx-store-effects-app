@@ -5,12 +5,12 @@ import * as fromToppings from './toppings.reducer';
 
 export interface ProductsState {
   pizzas: fromPizzas.PizzaState;
-  toppings: fromToppings.ToppingState;
+  toppings: fromToppings.ToppingsState;
 }
 
 export const reducers: ActionReducerMap<ProductsState> = {
   pizzas: fromPizzas.reducer,
-  toppings: fromToppings.reducer
+  toppings: fromToppings.reducer,
 };
 
 export const getProductsState = createFeatureSelector<ProductsState>(

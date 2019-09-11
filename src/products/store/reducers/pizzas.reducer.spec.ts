@@ -29,11 +29,11 @@ describe('PizzasReducer', () => {
     it('should populate the toppings array', () => {
       const pizzas: Pizza[] = [
         { id: 1, name: 'Pizza #1', toppings: [] },
-        { id: 2, name: 'Pizza #2', toppings: [] }
+        { id: 2, name: 'Pizza #2', toppings: [] },
       ];
       const entities = {
         1: pizzas[0],
-        2: pizzas[1]
+        2: pizzas[1],
       };
       const { initialState } = fromPizzas;
       const action = new fromActions.LoadPizzasSuccess(pizzas);
@@ -68,16 +68,16 @@ describe('PizzasReducer', () => {
     it('should add the new pizza to the pizzas array', () => {
       const pizzas: Pizza[] = [
         { id: 1, name: 'Pizza #1', toppings: [] },
-        { id: 2, name: 'Pizza #2', toppings: [] }
+        { id: 2, name: 'Pizza #2', toppings: [] },
       ];
       const newPizza: Pizza = {
         id: 3,
         name: 'Pizza #3',
-        toppings: []
+        toppings: [],
       };
       const entities = {
         1: pizzas[0],
-        2: pizzas[1]
+        2: pizzas[1],
       };
       const { initialState } = fromPizzas;
       const previousState = { ...initialState, entities };
@@ -93,16 +93,16 @@ describe('PizzasReducer', () => {
     it('should update the pizza', () => {
       const pizzas: Pizza[] = [
         { id: 1, name: 'Pizza #1', toppings: [] },
-        { id: 2, name: 'Pizza #2', toppings: [] }
+        { id: 2, name: 'Pizza #2', toppings: [] },
       ];
       const updatedPizza = {
         id: 2,
         name: 'Pizza #2',
-        toppings: [{ id: 1, name: 'basil' }]
+        toppings: [{ id: 1, name: 'basil' }],
       };
       const entities = {
         1: pizzas[0],
-        2: pizzas[1]
+        2: pizzas[1],
       };
       const { initialState } = fromPizzas;
       const previousState = { ...initialState, entities };
@@ -118,11 +118,11 @@ describe('PizzasReducer', () => {
     it('should remove the pizza', () => {
       const pizzas: Pizza[] = [
         { id: 1, name: 'Pizza #1', toppings: [] },
-        { id: 2, name: 'Pizza #2', toppings: [] }
+        { id: 2, name: 'Pizza #2', toppings: [] },
       ];
       const entities = {
         1: pizzas[0],
-        2: pizzas[1]
+        2: pizzas[1],
       };
       const { initialState } = fromPizzas;
       const previousState = { ...initialState, entities };
@@ -140,7 +140,7 @@ describe('PizzasReducer Selectors', () => {
     it('should return .entities', () => {
       const entities: { [key: number]: Pizza } = {
         1: { id: 1, name: 'Pizza #1', toppings: [] },
-        2: { id: 2, name: 'Pizza #2', toppings: [] }
+        2: { id: 2, name: 'Pizza #2', toppings: [] },
       };
       const { initialState } = fromPizzas;
       const previousState = { ...initialState, entities };

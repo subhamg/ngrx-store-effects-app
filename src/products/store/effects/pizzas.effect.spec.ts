@@ -38,8 +38,8 @@ describe('PizzasEffects', () => {
       toppings: [
         { id: 1, name: 'onion' },
         { id: 2, name: 'mushroom' },
-        { id: 3, name: 'basil' }
-      ]
+        { id: 3, name: 'basil' },
+      ],
     },
     {
       id: 2,
@@ -47,9 +47,9 @@ describe('PizzasEffects', () => {
       toppings: [
         { id: 1, name: 'onion' },
         { id: 2, name: 'mushroom' },
-        { id: 3, name: 'basil' }
-      ]
-    }
+        { id: 3, name: 'basil' },
+      ],
+    },
   ];
 
   beforeEach(() => {
@@ -58,8 +58,8 @@ describe('PizzasEffects', () => {
       providers: [
         PizzasService,
         fromEffects.PizzasEffects,
-        { provide: Actions, useFactory: getActions }
-      ]
+        { provide: Actions, useFactory: getActions },
+      ],
     });
 
     actions$ = TestBed.get(Actions);

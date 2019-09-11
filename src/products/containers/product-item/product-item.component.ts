@@ -13,19 +13,21 @@ import { Topping } from '../../models/topping.model';
   changeDetection: ChangeDetectionStrategy.OnPush,
   styleUrls: ['product-item.component.scss'],
   template: `
-    <div class="product-item">
+    <div 
+      class="product-item">
       <pizza-form
         [pizza]="pizza$ | async"
         [toppings]="toppings$ | async"
         (selected)="onSelect($event)"
         (create)="onCreate($event)"
         (update)="onUpdate($event)"
-        (remove)="onRemove($event)"
-      >
-        <pizza-display [pizza]="visualise$ | async"> </pizza-display>
+        (remove)="onRemove($event)">
+        <pizza-display
+          [pizza]="visualise$ | async">
+        </pizza-display>
       </pizza-form>
     </div>
-  `
+  `,
 })
 export class ProductItemComponent implements OnInit {
   pizza$: Observable<Pizza>;
@@ -36,10 +38,10 @@ export class ProductItemComponent implements OnInit {
 
   ngOnInit() {
     this.pizza$ = this.store.select(fromStore.getSelectedPizza).pipe(
-      tap((pizza: Pizza) => {
+      tap((pizza: Pizza = null) => {
         const pizzaExists = !!(pizza && pizza.toppings);
         const toppings = pizzaExists
-          ? pizza.toppings.map((topping) => topping.id)
+          ? pizza.toppings.map(topping => topping.id)
           : [];
         this.store.dispatch(new fromStore.VisualiseToppings(toppings));
       })
