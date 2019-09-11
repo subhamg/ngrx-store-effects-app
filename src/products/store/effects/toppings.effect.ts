@@ -15,7 +15,7 @@ export class ToppingsEffects {
   ) {}
 
   @Effect()
-  loadTopping$ = this.action$.ofType(toppingActions.LOAD_TOPPINGS).pipe(
+  loadToppings$ = this.action$.ofType(toppingActions.LOAD_TOPPINGS).pipe(
     switchMap(() => {
       return this.toppingService.getToppings().pipe(
         map((toppings) => new toppingActions.LoadToppingsSuccess(toppings)),
